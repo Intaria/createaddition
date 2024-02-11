@@ -23,8 +23,6 @@ public class CAPonder {
 		HELPER.addStoryBoard(CABlocks.ROLLING_MILL, "automate_rolling_mill", PonderScenes::automateRollingMill, AllPonderTags.KINETIC_APPLIANCES);
 		HELPER.addStoryBoard(CABlocks.TESLA_COIL, "tesla_coil", PonderScenes::teslaCoil, AllPonderTags.LOGISTICS, ELECTRIC);
 		HELPER.addStoryBoard(CABlocks.TESLA_COIL, "tesla_coil_hurt", PonderScenes::teslaCoilHurt, AllPonderTags.LOGISTICS, ELECTRIC);
-		HELPER.addStoryBoard(CAItems.STRAW, "liquid_blaze_burner", PonderScenes::liquidBlazeBurner, AllPonderTags.LOGISTICS);
-		HELPER.addStoryBoard(AllBlocks.BLAZE_BURNER, "liquid_blaze_burner", PonderScenes::liquidBlazeBurner, AllPonderTags.LOGISTICS);
 		HELPER.addStoryBoard(CABlocks.MODULAR_ACCUMULATOR, "accumulator", PonderScenes::modularAccumulator, AllPonderTags.LOGISTICS, ELECTRIC);
 		HELPER.addStoryBoard(CABlocks.PORTABLE_ENERGY_INTERFACE, "pei_transfer", PonderScenes::peiTransfer, AllPonderTags.LOGISTICS, ELECTRIC);
 		HELPER.addStoryBoard(CABlocks.PORTABLE_ENERGY_INTERFACE, "pei_redstone", PonderScenes::peiRedstone, AllPonderTags.LOGISTICS, ELECTRIC);

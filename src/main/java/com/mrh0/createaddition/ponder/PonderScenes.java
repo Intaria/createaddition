@@ -2,7 +2,6 @@ package com.mrh0.createaddition.ponder;
 
 import com.mrh0.createaddition.blocks.connector.base.AbstractConnectorBlock;
 import com.mrh0.createaddition.blocks.connector.base.ConnectorMode;
-import com.mrh0.createaddition.blocks.liquid_blaze_burner.LiquidBlazeBurnerBlock;
 import com.mrh0.createaddition.blocks.portable_energy_interface.PortableEnergyInterfaceBlockEntity;
 import com.mrh0.createaddition.blocks.tesla_coil.TeslaCoilBlock;
 import com.mrh0.createaddition.index.CABlocks;
@@ -309,55 +308,6 @@ public class PonderScenes {
 			.placeNearTarget()
 			.pointAt(util.vector.topOf(teslacoil));
 		scene.idle(80);
-		scene.markAsFinished();
-	}
-
-	public static void liquidBlazeBurner(SceneBuilder scene, SceneBuildingUtil util) {
-		scene.title("liquid_blaze_burner", "Liquid Fuel Burning");
-		scene.configureBasePlate(0, 0, 5);
-		scene.showBasePlate();
-		scene.idle(5);
-		//scene.world.setBlock(util.grid.at(3, 2, 2), Blocks.WATER.defaultBlockState(), false);
-
-		BlockPos burner = util.grid.at(2, 1, 2);
-		BlockPos[] blocks = {
-				util.grid.at(1, 1, 2),
-				util.grid.at(0, 1, 2),
-				util.grid.at(0, 2, 2),
-				util.grid.at(0, 3, 2)
-		};
-		scene.world.showSection(util.select.position(burner), Direction.DOWN);
-		scene.idle(5);
-		scene.overlay.showText(50)
-		.attachKeyFrame()
-		.text("Giving the Blaze Burner a Straw")
-		.placeNearTarget()
-		.pointAt(util.vector.topOf(burner));
-		scene.idle(10);
-		scene.overlay.showControls(new InputWindowElement(util.vector.topOf(burner), Pointing.DOWN).rightClick()
-				.withItem(new ItemStack(CAItems.STRAW.get())), 40);
-		scene.world.setBlock(burner, CABlocks.LIQUID_BLAZE_BURNER.getDefaultState().setValue(LiquidBlazeBurnerBlock.HEAT_LEVEL, BlazeBurnerBlock.HeatLevel.SMOULDERING), false);
-		scene.idle(60);
-		scene.overlay.showText(50)
-			.attachKeyFrame()
-			.text("will allow it to accept liquid fuels by Buckets,")
-			.placeNearTarget()
-			.pointAt(util.vector.topOf(burner));
-		scene.idle(10);
-		scene.overlay.showControls(new InputWindowElement(util.vector.topOf(burner), Pointing.DOWN).rightClick()
-				.withItem(new ItemStack(CAFluids.BIOETHANOL.getBucket().get())), 40);
-		scene.idle(60);
-		scene.overlay.showText(50)
-			.text("- or by pipes.")
-			.placeNearTarget()
-			.pointAt(util.vector.topOf(burner));
-		scene.idle(10);
-
-		for (int i = 0; i < blocks.length; i++) {
-			scene.idle(5);
-			scene.world.showSection(util.select.position(blocks[i]), Direction.EAST);
-		}
-		scene.idle(20);
 		scene.markAsFinished();
 	}
 

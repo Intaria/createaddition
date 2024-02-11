@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;;
 public enum WireType {
 	COPPER(0, 256, 78, 37, 30, CAItems.COPPER_WIRE.asStack(4), CAItems.COPPER_SPOOL.asStack()),
 	GOLD(1, 1024, 98, 83, 29, CAItems.GOLD_WIRE.asStack(4), CAItems.GOLD_SPOOL.asStack()),
-	ELECTRUM(2, 8196, 88, 66, 37, CAItems.ELECTRUM_WIRE.asStack(4), CAItems.ELECTRUM_SPOOL.asStack()),
+	//ELECTRUM(2, 8196, 88, 66, 37, CAItems.ELECTRUM_WIRE.asStack(4), CAItems.ELECTRUM_SPOOL.asStack()),
 	FESTIVE(3, 256, 26, 94, 12, CAItems.COPPER_WIRE.asStack(4), CAItems.FESTIVE_SPOOL.asStack());
 	//IRON(4, 256, 87, 87, 87, CAItems.IRON_WIRE.asStack(4), CAItems.IRON_SPOOL.asStack());
 
@@ -30,7 +30,7 @@ public enum WireType {
 		return switch (index) {
 			case 0 -> COPPER;
 			case 1 -> GOLD;
-			case 2 -> ELECTRUM;
+			//case 2 -> ELECTRUM;
 			case 3 -> FESTIVE;
 			//case 4 -> IRON;
 			default -> null;
@@ -78,8 +78,8 @@ public enum WireType {
 			return WireType.FESTIVE;
 		//if(item == CAItems.IRON_SPOOL.get())
 		//	return WireType.IRON;
-		if(item == CAItems.ELECTRUM_SPOOL.get())
-			return WireType.ELECTRUM;
+		//if(item == CAItems.ELECTRUM_SPOOL.get())
+		//	return WireType.ELECTRUM;
 		return WireType.COPPER;
 	}
 }

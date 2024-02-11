@@ -1,0 +1,33 @@
+{
+	"type": "minecraft:crafting_shaped",
+	
+	"pattern":
+	["SAS",
+	 "CBC",
+	 "PEP"],
+	"key":
+	{
+		"A": {
+            "item": "create:andesite_alloy"
+          },
+          "C": {
+            "item": "createaddition:capacitor"
+          },
+          "P": {
+            "tag": "forge:plates/brass"
+          },
+          "B": {
+            "item": "create:brass_casing"
+          },
+          "S": {
+            "item": "createaddition:copper_spool"
+          },
+          "E": {
+            "item": "create:electron_tube"
+          }
+	},
+	"result":{
+		"item": "createaddition:tesla_coil",
+		"count": 1
+	}
+}

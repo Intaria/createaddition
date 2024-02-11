@@ -1,7 +1,6 @@
 package com.mrh0.createaddition.event;
 
 import com.mrh0.createaddition.blocks.crops.HarmfulPlantBlock;
-import com.mrh0.createaddition.blocks.liquid_blaze_burner.LiquidBlazeBurnerBlock;
 import com.mrh0.createaddition.blocks.portable_energy_interface.PortableEnergyManager;
 import com.mrh0.createaddition.debug.CADebugger;
 import com.mrh0.createaddition.energy.network.EnergyNetworkManager;
@@ -55,30 +54,6 @@ public class GameEvents {
 		if(evt.getLevel().isClientSide()) return;
 		new EnergyNetworkManager(evt.getLevel());
 	}
-
-	@SubscribeEvent
-    public static void interact(PlayerInteractEvent.RightClickBlock evt) {
-		try {
-			if(evt.getLevel().isClientSide()) return;
-			BlockState state = evt.getLevel().getBlockState(evt.getPos());
-			if(evt.getItemStack().getItem() == CAItems.STRAW.get() && evt.getLevel().getBlockEntity(evt.getPos()) instanceof BlazeBurnerBlockEntity) {
-				if(state.is(AllBlocks.BLAZE_BURNER.get())) {
-					BlockState newState = CABlocks.LIQUID_BLAZE_BURNER.getDefaultState()
-							.setValue(LiquidBlazeBurnerBlock.HEAT_LEVEL, BlazeBurnerBlock.HeatLevel.SMOULDERING/*state.getValue(BlazeBurnerBlock.HEAT_LEVEL)*/)
-							.setValue(LiquidBlazeBurnerBlock.FACING, state.getValue(BlazeBurnerBlock.FACING));
-					evt.getLevel().setBlockAndUpdate(evt.getPos(), newState);
-					if(!evt.getEntity().isCreative())
-						evt.getItemStack().shrink(1);
-					evt.setCancellationResult(InteractionResult.SUCCESS);
-	            	evt.setCanceled(true);
-				}
-			}
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 
 	private static final Direction[] horizontalDirections = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
 	/*@SubscribeEvent

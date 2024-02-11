@@ -13,7 +13,6 @@ import com.mrh0.createaddition.index.CABlocks;
 import com.mrh0.createaddition.index.CAItems;
 import com.mrh0.createaddition.index.CARecipes;
 import com.mrh0.createaddition.recipe.charging.ChargingRecipe;
-import com.mrh0.createaddition.recipe.liquid_burning.LiquidBurningRecipe;
 import com.mrh0.createaddition.recipe.rolling.RollingRecipe;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.Create;
@@ -71,13 +70,6 @@ public class CreateAdditionJEI implements IModPlugin {
 				.emptyBackground(177, 53)
 				.build("charging", ChargingCategory::new));
 
-		ALL.add(builder(LiquidBurningRecipe.class)
-				.addTypedRecipes(CARecipes.LIQUID_BURNING_TYPE::get)
-				.catalyst(AllBlocks.BLAZE_BURNER::get)
-				.itemIcon(AllBlocks.BLAZE_BURNER.get())
-				.emptyBackground(177, 53)
-				.build("liquid_burning", LiquidBurningCategory::new));
-
 		ALL.forEach(registration::addRecipeCategories);
 	}
 
@@ -90,11 +82,6 @@ public class CreateAdditionJEI implements IModPlugin {
 	@Override
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
 		ALL.forEach(c -> c.registerCatalysts(registration));
-
-		registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "sandpaper_polishing")).ifPresent(type -> {
-			registration.addRecipeCatalyst(new ItemStack(CAItems.DIAMOND_GRIT_SANDPAPER.get()), type);
-		});
-		//registration.addRecipeCatalyst(new ItemStack(CAItems.DIAMOND_GRIT_SANDPAPER.get()), new ResourceLocation(Create.ID, "deploying"));
 	}
 
 	private <T extends Recipe<?>> CategoryBuilder<T> builder(Class<? extends T> recipeClass) {

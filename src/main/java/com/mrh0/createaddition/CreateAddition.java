@@ -36,7 +36,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mrh0.createaddition.blocks.liquid_blaze_burner.LiquidBlazeBurnerBlock;
 import com.mrh0.createaddition.commands.CCApiCommand;
 import com.mrh0.createaddition.config.Config;
 import com.mrh0.createaddition.groups.ModGroup;
@@ -96,19 +95,10 @@ public class CreateAddition {
         CASounds.register(eventBus);
         CASchedule.register();
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> CAPartials::init);
-        CAArmInteractions.register();
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-    	CAPotatoCannonProjectiles.register();
     	BlockStressValues.registerProvider(MODID, AllConfigs.server().kinetics.stressValues);
-    	BoilerHeaters.registerHeater(CABlocks.LIQUID_BLAZE_BURNER.get(), (level, pos, state) -> {
-    		BlazeBurnerBlock.HeatLevel value = state.getValue(LiquidBlazeBurnerBlock.HEAT_LEVEL);
-			if (value == BlazeBurnerBlock.HeatLevel.NONE) return -1;
-			if (value == BlazeBurnerBlock.HeatLevel.SEETHING) return 2;
-			if (value.isAtLeast(BlazeBurnerBlock.HeatLevel.FADING)) return 1;
-			return 0;
-    	});
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -118,7 +108,6 @@ public class CreateAddition {
         RenderType cutout = RenderType.cutoutMipped();
 
         ItemBlockRenderTypes.setRenderLayer(CABlocks.TESLA_COIL.get(), cutout);
-        ItemBlockRenderTypes.setRenderLayer(CABlocks.BARBED_WIRE.get(), cutout);
         ItemBlockRenderTypes.setRenderLayer(CABlocks.SMALL_LIGHT_CONNECTOR.get(), cutout);
     }
 

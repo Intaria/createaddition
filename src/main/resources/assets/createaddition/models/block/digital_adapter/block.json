@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "createaddition:block/digital_adapter/block"
-  }
-}

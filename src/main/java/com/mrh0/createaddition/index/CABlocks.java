@@ -5,22 +5,16 @@ import static com.simibubi.create.foundation.data.CreateRegistrate.connectedText
 import com.mrh0.createaddition.CreateAddition;
 import com.mrh0.createaddition.blocks.accumulator.AccumulatorBlock;
 import com.mrh0.createaddition.blocks.alternator.AlternatorBlock;
-import com.mrh0.createaddition.blocks.barbed_wire.BarbedWireBlock;
 import com.mrh0.createaddition.blocks.cake.CACakeBlock;
 import com.mrh0.createaddition.blocks.connector.LargeConnectorBlock;
 import com.mrh0.createaddition.blocks.connector.SmallConnectorBlock;
 import com.mrh0.createaddition.blocks.connector.SmallLightConnectorBlock;
 import com.mrh0.createaddition.blocks.crops.HarmfulPlantBlock;
-import com.mrh0.createaddition.blocks.digital_adapter.DigitalAdapterBlock;
-import com.mrh0.createaddition.blocks.digital_adapter.DigitalAdapterDisplaySource;
-import com.mrh0.createaddition.blocks.digital_adapter.DigitalAdapterBlockItem;
 import com.mrh0.createaddition.blocks.modular_accumulator.*;
 import com.mrh0.createaddition.blocks.portable_energy_interface.PortableEnergyInterfaceBlock;
 import com.mrh0.createaddition.blocks.portable_energy_interface.PortableEnergyInterfaceMovement;
 import com.mrh0.createaddition.energy.NodeMovementBehaviour;
-import com.mrh0.createaddition.blocks.creative_energy.CreativeEnergyBlock;
 import com.mrh0.createaddition.blocks.electric_motor.ElectricMotorBlock;
-import com.mrh0.createaddition.blocks.liquid_blaze_burner.LiquidBlazeBurnerBlock;
 import com.mrh0.createaddition.blocks.redstone_relay.RedstoneRelayBlock;
 import com.mrh0.createaddition.blocks.rolling_mill.RollingMillBlock;
 import com.mrh0.createaddition.blocks.tesla_coil.TeslaCoilBlock;
@@ -77,13 +71,6 @@ public class CABlocks {
 			.transform(BlockStressDefaults.setImpact(Config.ROLLING_MILL_STRESS.get()))
 			.tag(AllBlockTags.SAFE_NBT.tag) //Dono what this tag means (contraption safe?).
 			.item()
-			.transform(customItemModel())
-			.register();
-
-	public static final BlockEntry<CreativeEnergyBlock> CREATIVE_ENERGY = CreateAddition.REGISTRATE.block("creative_energy", CreativeEnergyBlock::new)
-			.initialProperties(SharedProperties::softMetal)
-			.item()
-			.properties(p -> p.rarity(Rarity.EPIC))
 			.transform(customItemModel())
 			.register();
 
@@ -144,13 +131,6 @@ public class CABlocks {
 			.transform(customItemModel())
 			.register();*/
 
-	public static final BlockEntry<BarbedWireBlock> BARBED_WIRE = CreateAddition.REGISTRATE.block("barbed_wire",  BarbedWireBlock::new)
-			.initialProperties(Material.WEB)
-			.properties(props -> props.noCollission().requiresCorrectToolForDrops().strength(4.0F))
-			.item()
-			.transform(customItemModel())
-			.register();
-
 	public static final BlockEntry<TeslaCoilBlock> TESLA_COIL = CreateAddition.REGISTRATE.block("tesla_coil",  TeslaCoilBlock::new)
 			.initialProperties(SharedProperties::softMetal)
 			.item(AssemblyOperatorBlockItem::new)
@@ -167,15 +147,6 @@ public class CABlocks {
 			.addLayer(() -> RenderType::cutoutMipped)
 			.item(ModularAccumulatorBlockItem::new)
 			.transform(customItemModel())
-			.register();
-
-	public static final BlockEntry<LiquidBlazeBurnerBlock> LIQUID_BLAZE_BURNER = CreateAddition.REGISTRATE.block("liquid_blaze_burner",  LiquidBlazeBurnerBlock::new)
-			.initialProperties(SharedProperties::softMetal)
-			.properties(p -> p.color(MaterialColor.COLOR_GRAY))
-			.properties(p -> p.lightLevel(BlazeBurnerBlock::getLight))
-			.transform(pickaxeOnly())
-			.addLayer(() -> RenderType::cutoutMipped)
-			.blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
 			.register();
 
 	public static final BlockEntry<PortableEnergyInterfaceBlock> PORTABLE_ENERGY_INTERFACE = CreateAddition.REGISTRATE.block("portable_energy_interface",  PortableEnergyInterfaceBlock::new)
@@ -195,14 +166,6 @@ public class CABlocks {
 			.initialProperties(() -> Blocks.DRIED_KELP_BLOCK)
 			.properties(p -> p.color(MaterialColor.COLOR_GRAY))
 			.item(BiomassPelletBlock::new)
-			.transform(customItemModel())
-			.register();
-
-	public static final BlockEntry<DigitalAdapterBlock> DIGITAL_ADAPTER = CreateAddition.REGISTRATE.block("digital_adapter",  DigitalAdapterBlock::new)
-			.initialProperties(SharedProperties::softMetal)
-			.onRegister(assignDataBehaviour(new DigitalAdapterDisplaySource(), "digital_adapter"))
-			.properties(p -> p.color(MaterialColor.COLOR_GRAY))
-			.item(DigitalAdapterBlockItem::new)
 			.transform(customItemModel())
 			.register();
 

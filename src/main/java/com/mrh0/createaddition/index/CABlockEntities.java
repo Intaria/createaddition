@@ -5,10 +5,7 @@ import com.mrh0.createaddition.blocks.connector.LargeConnectorBlockEntity;
 import com.mrh0.createaddition.blocks.connector.SmallConnectorBlockEntity;
 import com.mrh0.createaddition.blocks.connector.SmallLightConnectorBlockEntity;
 import com.mrh0.createaddition.blocks.connector.base.ConnectorRenderer;
-import com.mrh0.createaddition.blocks.creative_energy.CreativeEnergyBlockEntity;
-import com.mrh0.createaddition.blocks.digital_adapter.DigitalAdapterBlockEntity;
 import com.mrh0.createaddition.blocks.electric_motor.*;
-import com.mrh0.createaddition.blocks.liquid_blaze_burner.*;
 import com.mrh0.createaddition.blocks.modular_accumulator.ModularAccumulatorBlockEntity;
 import com.mrh0.createaddition.blocks.modular_accumulator.ModularAccumulatorRenderer;
 import com.mrh0.createaddition.blocks.portable_energy_interface.PortableEnergyInterfaceInstance;
@@ -48,11 +45,6 @@ public class CABlockEntities {
 			.renderer(() -> RollingMillRenderer::new)
 			.register();
 	
-	public static final BlockEntityEntry<CreativeEnergyBlockEntity> CREATIVE_ENERGY = CreateAddition.REGISTRATE
-			.blockEntity("creative_energy", CreativeEnergyBlockEntity::new)
-			.validBlocks(CABlocks.CREATIVE_ENERGY)
-			.register();
-	
 	public static final BlockEntityEntry<SmallConnectorBlockEntity> SMALL_CONNECTOR = CreateAddition.REGISTRATE
 			.blockEntity("connector", SmallConnectorBlockEntity::new)
 			.validBlocks(CABlocks.SMALL_CONNECTOR)
@@ -88,12 +80,6 @@ public class CABlockEntities {
 			.validBlocks(CABlocks.TESLA_COIL)
 			.register();
 	
-	public static final BlockEntityEntry<LiquidBlazeBurnerBlockEntity> LIQUID_BLAZE_BURNER = CreateAddition.REGISTRATE
-			.blockEntity("liquid_blaze_burner", LiquidBlazeBurnerBlockEntity::new)
-			.validBlocks(CABlocks.LIQUID_BLAZE_BURNER)
-			.renderer(() -> LiquidBlazeBurnerRenderer::new)
-			.register();
-	
 	public static final BlockEntityEntry<ModularAccumulatorBlockEntity> MODULAR_ACCUMULATOR = CreateAddition.REGISTRATE
 			.blockEntity("modular_accumulator", ModularAccumulatorBlockEntity::new)
 			.validBlocks(CABlocks.MODULAR_ACCUMULATOR)
@@ -106,11 +92,6 @@ public class CABlockEntities {
 			.instance(() -> PortableEnergyInterfaceInstance::new)
 			.validBlocks(CABlocks.PORTABLE_ENERGY_INTERFACE)
 			.renderer(() -> PortableEnergyInterfaceRenderer::new)
-			.register();
-
-	public static final BlockEntityEntry<DigitalAdapterBlockEntity> DIGITAL_ADAPTER = CreateAddition.REGISTRATE
-			.blockEntity("digital_adapter", DigitalAdapterBlockEntity::new)
-			.validBlocks(CABlocks.DIGITAL_ADAPTER)
 			.register();
 	
 	public static void register() {}

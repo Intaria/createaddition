@@ -74,9 +74,6 @@ public class Config {
 	public static ForgeConfigSpec.IntValue TESLA_COIL_HURT_EFFECT_TIME_PLAYER;
 	public static ForgeConfigSpec.IntValue TESLA_COIL_HURT_FIRE_COOLDOWN;
 
-	public static ForgeConfigSpec.IntValue DIAMOND_GRIT_SANDPAPER_USES;
-	public static ForgeConfigSpec.DoubleValue BARBED_WIRE_DAMAGE;
-
 	static {
 		COMMON_BUILDER.comment("Make sure config changes are duplicated on both Clients and the Server when running a dedicated Server,")
 					.comment(" as the config isnt synced between Clients and Server.");
@@ -219,16 +216,6 @@ public class Config {
 
 		TESLA_COIL_HURT_FIRE_COOLDOWN = COMMON_BUILDER.comment("Tesla Coil fire interval (in ticks).")
 				.defineInRange("tesla_coil_fire_cooldown", 20, 0, Integer.MAX_VALUE);
-		COMMON_BUILDER.pop();
-
-
-		COMMON_BUILDER.comment("Misc").push(CATAGORY_MISC);
-		DIAMOND_GRIT_SANDPAPER_USES = COMMON_BUILDER.comment("Diamond Grit Sandpaper durability (number of uses).")
-				.defineInRange("diamond_grit_sandpaper_uses", 1024, 3, Integer.MAX_VALUE);
-
-		BARBED_WIRE_DAMAGE = COMMON_BUILDER.comment("Barbed Wire Damage.")
-				.defineInRange("barbed_wire_damage", 2, 0, Float.MAX_VALUE);
-
 		COMMON_BUILDER.pop();
 
 		COMMON_CONFIG = COMMON_BUILDER.build();
