@@ -57,17 +57,6 @@ public class CAItems {
 	//		CreateAddition.REGISTRATE.item("electrum_spool", WireSpool::new).register();
 	public static final ItemEntry<WireSpool> FESTIVE_SPOOL =
 			CreateAddition.REGISTRATE.item("festive_spool", WireSpool::new).register();
-
-	public static final ItemEntry<Item> COPPER_ROD =
-			CreateAddition.REGISTRATE.item("copper_rod", Item::new).register();
-	public static final ItemEntry<Item> IRON_ROD =
-			CreateAddition.REGISTRATE.item("iron_rod", Item::new).register();
-	public static final ItemEntry<Item> GOLD_ROD =
-			CreateAddition.REGISTRATE.item("gold_rod", Item::new).register();
-	//public static final ItemEntry<Item> ELECTRUM_ROD =
-	//		CreateAddition.REGISTRATE.item("electrum_rod", Item::new).register();
-	public static final ItemEntry<Item> BRASS_ROD =
-			CreateAddition.REGISTRATE.item("brass_rod", Item::new).register();
 	
 	public static final ItemEntry<HiddenIngredientItem> CAKE_BASE =
 			CreateAddition.REGISTRATE.item("cake_base", HiddenIngredientItem::new)

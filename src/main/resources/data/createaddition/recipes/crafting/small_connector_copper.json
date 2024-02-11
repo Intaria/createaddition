@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-		    "tag": "forge:rods/copper"
+		    "item": "minecraft:lightning_rod"
 		},
 		{
 		    "item": "create:andesite_alloy"

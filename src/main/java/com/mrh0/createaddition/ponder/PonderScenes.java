@@ -127,7 +127,7 @@ public class PonderScenes {
 	}
 
 	public static void rollingMill(SceneBuilder scene, SceneBuildingUtil util) {
-		scene.title("rolling_mill", "Rolling metals into Rods and Wires");
+		scene.title("rolling_mill", "Rolling metals into Wires");
 		scene.configureBasePlate(1, 0, 4);
 		scene.world.showSection(util.select.layer(0), Direction.UP);
 
@@ -140,7 +140,7 @@ public class PonderScenes {
 
 		scene.idle(10);
 		scene.overlay.showText(50)
-			.text("The Rolling Mill uses rotational force to roll metals into Rods and Wires")
+			.text("The Rolling Mill uses rotational force to roll metals into Wires")
 			.placeNearTarget()
 			.pointAt(util.vector.topOf(mill));
 		scene.idle(60);

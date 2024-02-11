@@ -8,7 +8,7 @@
 	{
 		"R":
 		{
-			"tag": "forge:rods/copper"
+			"item": "minecraft:lightning_rod"
 		},
 		"B":
 		{

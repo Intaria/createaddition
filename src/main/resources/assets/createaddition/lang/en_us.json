@@ -245,8 +245,8 @@
 	"createaddition.ponder.alternator.text_2": "It generates electric energy from rotational force",
 	"createaddition.ponder.alternator.text_3": "Its energy production is determined by the input RPM",
 
-	"createaddition.ponder.rolling_mill.header": "Rolling metals into Rods and Wires",
-	"createaddition.ponder.rolling_mill.text_1": "The Rolling Mill uses rotational force to roll metals into Rods and Wires",
+	"createaddition.ponder.rolling_mill.header": "Rolling metals into Wires",
+	"createaddition.ponder.rolling_mill.text_1": "The Rolling Mill uses rotational force to roll metals into Wires",
 	"createaddition.ponder.rolling_mill.text_2": "To manually input items, drop Ingots or Plates on the top of the Mill",
 	"createaddition.ponder.rolling_mill.text_3": "Right-click the Mill to manually retrieve the output items",
 

@@ -228,8 +228,8 @@
 	"createaddition.ponder.alternator.text_2": "Он генерирует электрическую энергию (FE) за счет силы вращения.",
 	"createaddition.ponder.alternator.text_3": "Производство энергии определяется входной частотой вращения.",
 
-	"createaddition.ponder.rolling_mill.header": "Прокатка металлов в стержни и проволоку",
-	"createaddition.ponder.rolling_mill.text_1": "Прокатный станок использует силу вращения для прокатки металлов в стержни и проволоку.",
+	"createaddition.ponder.rolling_mill.header": "Прокатка металлов в проволоку",
+	"createaddition.ponder.rolling_mill.text_1": "Прокатный станок использует силу вращения для прокатки металлов в проволоку.",
 	"createaddition.ponder.rolling_mill.text_2": "Чтобы вручную ввести ресурсы, бросьте слитки или пластины на верхнюю часть мельницы.",
 	"createaddition.ponder.rolling_mill.text_3": "ПКМ по станку, чтобы вручную получить предметы со станка.",
 
